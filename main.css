@@ -1,0 +1,31 @@
+.title__name {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: dash 7s linear forwards;
+  stroke-width: 0;
+  background: -webkit-linear-gradient(#eee, #333);
+  font-family: 'times-new-roman', sans-serif;
+}
+@keyframes dash {
+  0%{
+stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  fill:white;
+  }
+40%{
+    stroke-dasharray: 40;
+    stroke-dashoffset: 40;
+    stroke-width: 1;
+    fill:white;
+    }
+
+
+  65%{
+    stroke-dasharray: .001;
+    stroke-dashoffset: 0;
+    stroke-width: 2;
+    }
+    100%{
+      fill: black;
+    }
+}
