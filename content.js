@@ -1,21 +1,8 @@
-//import * as contents from "contents";
-//console.log(contents);
-console.log("HERE");
-var intro = {
-  strings:[
-  "Welcome to my personal site!",
-  "hmmm...",
-  "This looks a little bare...",
-  "Let's fix that",
-  ],
-  typeSpeed: 20,
-  showCursor: false,
-}
-
-
-var options = {
-  strings: [
-    `<style id=typed-css>
+module.exports.SvgStyle = [`<style id=typed-css>
+  #styled-css{
+    white-space:pre;
+    display:inline-block;
+  }
 @keyframes dash {
   0%{
     stroke-dasharray: 200;
@@ -49,15 +36,14 @@ svg {
   animation: dash 7s linear forwards;
 }
 
-  </style> <br/> <br/>`],
-  typeSpeed: 20,
-  startDelay: 6000,
-  showCursor: false,
-};
+  </style> <br/> <br/>`];
 
-var options2 = {
-  strings: [
-`@keyframes dash {
+module.exports.IntroText = ["Welcome to my personal site!",
+  "hmmm...",
+  "This looks a little bare...",
+  "Let's fix that"];
+
+module.exports.CssHTML = [ `@keyframes dash {
   0%{
     stroke-dasharray: 200;
     stroke-dashoffset: 200;
@@ -90,14 +76,4 @@ svg {
   animation: dash 7s linear forwards;
 }
 
-<br/> <br/>`],
-  typeSpeed: 20,
-  startDelay: 6000,
-  showCursor: false,
-};
-
-
-
-var typeIntro = new Typed('#intro', intro);
-var typed = new Typed('#typed-container', options);
-var typed2 = new Typed('#styled-css', options2);
+<br/> <br/>`];

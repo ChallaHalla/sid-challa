@@ -1,6 +1,7 @@
-
+svg{
+  display: none;
+}
   #typed-css{
-    display:inline-block;
   }
   #typed-container::before{
     content:<b>Test</b>;
