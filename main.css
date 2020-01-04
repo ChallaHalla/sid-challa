@@ -1,8 +1,3 @@
-svg{
-  display: none;
-}
-  #typed-css{
-  }
   #typed-container::before{
     content:<b>Test</b>;
   }

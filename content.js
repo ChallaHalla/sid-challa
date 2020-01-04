@@ -1,4 +1,16 @@
-module.exports.SvgStyle = [`<style id=typed-css>
+export const IntroText = [
+"Welcome to my personal site!",
+  "hmmm...",
+  "This looks a little bare...",
+  "Let's fix that",
+ `<svg height="300" width="1200">
+    <text x="10" y="120" font-size="150" fill="white" stroke="white" class="title__name">Siddarth Challa</text>
+  </svg>
+`
+  ];
+
+
+export const SvgStyle = [`<style id=typed-css>
   #styled-css{
     white-space:pre;
     display:inline-block;
@@ -24,9 +36,6 @@ module.exports.SvgStyle = [`<style id=typed-css>
     fill: black;
   }
 }
-svg {
-  display: block;
-}
 .title__name {
   stroke: black;
   font-family: 'times-new-roman', sans-serif;
@@ -38,12 +47,7 @@ svg {
 
   </style> <br/> <br/>`];
 
-module.exports.IntroText = ["Welcome to my personal site!",
-  "hmmm...",
-  "This looks a little bare...",
-  "Let's fix that"];
-
-module.exports.CssHTML = [ `@keyframes dash {
+export const CssHTML = [ `@keyframes dash {
   0%{
     stroke-dasharray: 200;
     stroke-dashoffset: 200;
@@ -63,9 +67,6 @@ module.exports.CssHTML = [ `@keyframes dash {
   100%{
     fill: black;
   }
-}
-svg {
-  display: block;
 }
 .title__name {
   stroke: black;
