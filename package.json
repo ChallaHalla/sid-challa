@@ -1,0 +1,26 @@
+{
+  "name": "sid-challa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "typed.js": "^2.0.11"
+  },
+  "devDependencies": {
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "scripts": {
+    "start": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChallaHalla/sid-challa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChallaHalla/sid-challa/issues"
+  },
+  "homepage": "https://github.com/ChallaHalla/sid-challa#readme"
+}

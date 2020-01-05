@@ -91,11 +91,11 @@ export const CssHTML = [ `
 <br/> <br/>`];
 
 
-export const bio = [ `<h3> Credentials:</h3><span>Full Stack Engineer @ <a href="httspans://dovetale.com">Dovetale</a></span>
+export const bio = [ `<h3> Credentials:</h3>`, `<h3> Credentials:</h3><span>Full Stack Engineer @ <a href="httspans://dovetale.com">Dovetale</a></span>
 <span>Software Engineering Intern @ AWS <span>
 <span>Math/CS from NYU, class of 2019 </span>
 <span>Former Super Smash Brothers Melee TO/Player </span>
 <small>Falco/Fox main (catch these hands)</small><h3> Catch me on: </h3><span>github.com/ChallaHalla</span>
 <span>twitter.com/darthchalla</span><h3>See my work:</h3><span>Random Acts of Pizza</span>
-<span>Geras</span><h3>About me:</h3><span>hmmm what the fuck do i say lol</span>
+<span>Geras</span><h3>About me:</h3><span>hmmm what I need to say lol</span>
 `];
