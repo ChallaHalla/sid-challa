@@ -10,13 +10,19 @@ export const IntroText = [
   ];
 
 
-export const SvgStyle = [`<style id=typed-css>
+export const Css = [`
   #styled-css{
-    white-space:pre;
     display:inline-block;
-  }
-  #typed-container{
     float:right;
+  }
+  .id_selector{
+    color: red;
+  }
+  .property {
+    color: orange;
+  }
+  .class_selector{
+    color: green;
   }
 @keyframes dash {
   0%{
@@ -47,49 +53,7 @@ export const SvgStyle = [`<style id=typed-css>
   stroke-width: 0;
   animation: dash 7s linear forwards;
 }
-
-  </style> <br/> <br/>`];
-
-export const CssHTML = [ `
-#styled-css{
-    white-space:pre;
-    display:inline-block;
-  }
-#typed-container{
-    float:right;
-  }
-@keyframes dash {
-  0%{
-    stroke-dasharray: 200;
-    stroke-dashoffset: 200;
-    fill:white;
-  }
-  40%{
-    stroke-dasharray: 80;
-    stroke-dashoffset: 200;
-    stroke-width: 1;
-    fill:white;
-  }
-  65%{
-    stroke-dasharray: .001;
-    stroke-dashoffset: 0;
-    stroke-width: 2;
-  }
-  100%{
-    fill: black;
-  }
-}
-.title__name {
-  stroke: black;
-  font-family: 'times-new-roman', sans-serif;
-  stroke-dasharray: 200;
-  stroke-dashoffset: 800;
-  stroke-width: 0;
-  animation: dash 7s linear forwards;
-}
-
-<br/> <br/>`];
-
+  `];
 
 export const bio = [ `<h3> Credentials:</h3>`, `<h3> Credentials:</h3><span>Full Stack Engineer @ <a href="httspans://dovetale.com">Dovetale</a></span>
 <span>Software Engineering Intern @ AWS <span>

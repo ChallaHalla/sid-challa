@@ -10,18 +10,24 @@ var intro = {
     self.el.innerHTML = self.el.innerText;
   }
 }
-
-
+console.log(content.Css);
 var css = {
-  strings: content.CssHTML,
+  strings: content.Css,
   typeSpeed: 15,
   startDelay: 6000,
   showCursor: false,
 };
 
+const htmlStrings = content.Css[0].
+replace(/(#)(.*)(\d|){/gm, "<span class='id_selector'>$1$2</span> {").
+replace(/(\.)(.*)(\d|){/gm, "<span class='class_selector'>$1$2</span> {").
+replace(/(.*):(.*);/gm, "<span class='property'>$1</span>:<span class='value'>$2</span>;").
+replace(/\n/gm, "<br>").replace(/<\s*style[^>]*>/gm,"").
+replace(/<\/style>/gm,"");
+
 var svgStyle = {
-  strings: content.SvgStyle,
-  typeSpeed: 15,
+  strings: [ htmlStrings ],
+  typeSpeed: 12,
   startDelay: 6000,
   showCursor: false,
 };
@@ -42,6 +48,6 @@ var bio ={
 
 
 var typeIntro = new Typed('#intro', intro);
-var typeCss = new Typed('#typed-container', css);
+var typeCss = new Typed('#style-sheet', css);
 var typeSvgStyle = new Typed('#styled-css', svgStyle);
 var typeBio = new Typed('#bio', bio);
