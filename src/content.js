@@ -11,19 +11,25 @@ export const IntroText = [
 
 
 export const Css = [`
-  #styled-css{
-    display:inline-block;
-    float:right;
-  }
-  .id_selector{
-    color: red;
-  }
-  .property {
-    color: orange;
-  }
-  .class_selector{
-    color: green;
-  }
+.id_selector{
+  color: #29A006;
+}
+.class_selector{
+  color: #06A07D;
+}
+.property {
+  color: #2C81CD;
+}
+#styled-css{
+  display:inline-block;
+  float:right;
+  font-family: courier;
+  color: white;
+  background: #0E3702;
+  width: 600px;
+  height: 600px;
+  overflow: scroll;
+}
 @keyframes dash {
   0%{
     stroke-dasharray: 200;
@@ -53,6 +59,17 @@ export const Css = [`
   stroke-width: 0;
   animation: dash 7s linear forwards;
 }
+
+/*
+ * Pay attention to the name animation :3
+ *
+ * need to put a sleep here somehow to ensure that ppl can actually
+ * see the animation lol
+ *
+ * That animation css is kinda messy but w.e fuq it lol
+ *
+ * Time to make this site look cool
+ */
   `];
 
 export const bio = [ `<h3> Credentials:</h3>`, `<h3> Credentials:</h3><span>Full Stack Engineer @ <a href="httspans://dovetale.com">Dovetale</a></span>

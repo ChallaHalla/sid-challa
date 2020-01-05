@@ -1,5 +1,14 @@
 import * as content from "./content.js";
 import Typed from "typed.js"
+
+const updateScroll = () => {
+  const styleCss = document.getElementById("styled-css");
+  styleCss.scrollTop = styleCss.scrollHeight;
+}
+
+setInterval(updateScroll,10);
+
+
 var intro = {
   strings: content.IntroText,
   typeSpeed: 20,
@@ -10,7 +19,6 @@ var intro = {
     self.el.innerHTML = self.el.innerText;
   }
 }
-console.log(content.Css);
 var css = {
   strings: content.Css,
   typeSpeed: 15,
@@ -22,7 +30,8 @@ const htmlStrings = content.Css[0].
 replace(/(#)(.*)(\d|){/gm, "<span class='id_selector'>$1$2</span> {").
 replace(/(\.)(.*)(\d|){/gm, "<span class='class_selector'>$1$2</span> {").
 replace(/(.*):(.*);/gm, "<span class='property'>$1</span>:<span class='value'>$2</span>;").
-replace(/\n/gm, "<br>").replace(/<\s*style[^>]*>/gm,"").
+replace(/\n/gm, "<br>").
+replace(/<\s*style[^>]*>/gm,"").
 replace(/<\/style>/gm,"");
 
 var svgStyle = {
