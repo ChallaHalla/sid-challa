@@ -9,68 +9,57 @@ const updateScroll = () => {
 setInterval(updateScroll,10);
 
 
-var intro = {
+
+const intro = {
   strings: content.IntroText,
   typeSpeed: 20,
   showCursor: false,
+  onComplete:(self)=>{
+    typeStyle();
+    self.destroy();
+    console.log(self);
+  },
+}
+
+const svg = {
+  strings: content.svgHTML,
+  typeSpeed: 20,
+  showCursor: false,
   contentType:"text",
-  onComplete: (self) => {
-    self.options.contentType="html";
+  onComplete:(self)=>{
     self.el.innerHTML = self.el.innerText;
   }
 }
-var css = {
+const css = {
   strings: content.Css,
   typeSpeed: 15,
-  startDelay: 6000,
   showCursor: false,
 };
 
-const htmlStrings = content.Css[0].
-replace(/(#)(.*)(\d|){/gm, "<span class='id_selector'>$1$2</span> {").
-replace(/(\.)(.*)(\d|){/gm, "<span class='class_selector'>$1$2</span> {").
-replace(/(.*):(.*);/gm, "<span class='property'>$1</span>:<span class='value'>$2</span>;").
-replace(/\n/gm, "<br>").
-replace(/<\s*style[^>]*>/gm,"").
-replace(/<\/style>/gm,"");
+const htmlStrings = content.cssToHTML( content.Css[0] )
 
-var svgStyle = {
+const svgStyle = {
   strings: [ htmlStrings ],
   typeSpeed: 12,
-  startDelay: 6000,
   showCursor: false,
 };
-const escapedHTML = content.bio.map( (s) => { 
-  return content.toEscapedHtml(s);
-});
-console.log(escapedHTML);
 
-console.log(content.generateEscapedHTMLArray(escapedHTML));
 
-var bio ={
-  strings: content.generateEscapedHTMLArray(escapedHTML),
-  typeSpeed: 20,
- // startDelay: 6000,
+const bio ={
+  strings: content.bio,
+  typeSpeed: 10,
   showCursor: false,
   loop: false,
-  onStringTyped:(arrayPos, self) => {
-  console.log(self.options.strings[arrayPos]);
-    const htmlDiv = document.getElementById("html-bio");
-
-    htmlDiv.innerHTML += content.stringToHTML(self.options.strings[arrayPos]);
-    self.el.innerHTML = "";
-  },
-
- // contentType:"text",
- // onStringTyped: (arrayPos, self) => {
- //   console.log(arrayPos,self)
- //   self.el.innerHTML = self.options.strings.slice(arrayPos,arrayPos+1);
- // },
 }
 
+const typeStyle = () => {
+  console.log("Typing style");
+ // const typeCss = new Typed('#style-sheet', css);
+ // const typeSvgStyle = new Typed('#styled-css', svgStyle);
+  const typeSVG = new Typed('#svg', svg);
+  const typeBio = new Typed('#bio', bio);
+};
 
 
-//var typeIntro = new Typed('#intro', intro);
-//var typeCss = new Typed('#style-sheet', css);
-//var typeSvgStyle = new Typed('#styled-css', svgStyle);
-var typeBio = new Typed('#bio', bio);
+const typeIntro = new Typed('#intro', intro);
+

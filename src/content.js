@@ -2,12 +2,13 @@ export const IntroText = [
 "Welcome to my personal site!",
   "hmmm...",
   "This looks a little bare...",
-  "Let's fix that",
- `<svg height="150" width="1200">
+  "Let's fix that"
+   ];
+
+export const svgHTML = [`<svg height="150" width="1200">
     <text x="10" y="120" font-size="60" fill="white" stroke="white" class="title__name">Siddarth Challa</text>
-  </svg>
-`
-  ];
+  </svg>`
+];
 
 
 export const Css = [`
@@ -78,52 +79,11 @@ export const bio = [ `<h3> Credentials:</h3>
 <span>twitter.com/darthchalla</span><h3>See my work:</h3><span>Random Acts of Pizza</span>
 <span>Geras</span><h3>About me:</h3><span>hmmm what I need to say lol</span>`];
 
-export const toEscapedHtml = (str) => {
- return str.replace(/</g,"&lt;").
- replace(/>/g,"&gt;")
-}
-
-
-export const generateEscapedHTMLArray = (strings) => {
-
-return strings[0].split("\n");
-
-//   const escapedHTMLString = strings[0];
-//   const stringsToHTML = [];
-//   [...escapedHTMLString ].forEach((c,i) => {
-//    if(c === "\n"){
-//      if(stringsToHTML.length > 0){
-//        // generate html to escape
-//          const prevString = stringsToHTML[stringsToHTML.length -1]
-//          //let newString = stringToHTML(prevString);
-//
-//          let newString = "";
-//          newString += escapedHTMLString.substring(toEscapedHtml(prevString).length-1, i);
-//          console.log(newString);
-//          stringsToHTML.push(newString);
-//      }else{
-//        stringsToHTML.push( escapedHTMLString.substring(0,i));
-//      }
-
-
-
-      //append current substring to array
-      //
-      //
-      //flow
-      //
-      //insert escaped html,
-      //change current element html to unescaped html
-      //
-      //next string
-  //  }
-
-
-  // });
-  // return stringsToHTML;
-}
-
-export const stringToHTML = (str) => {
- return str.replace(/&lt;/g,"<").
- replace(/&gt;/g,">")
-}
+export const cssToHTML = (str) => {
+  return str.replace(/(#)(.*)(\d|){/gm, "<span class='id_selector'>$1$2</span> {").
+  replace(/(\.)(.*)(\d|){/gm, "<span class='class_selector'>$1$2</span> {").
+  replace(/(.*):(.*);/gm, "<span class='property'>$1</span>:<span class='value'>$2</span>;").
+  replace(/\n/gm, "<br>").
+  replace(/<\s*style[^>]*>/gm,"").
+  replace(/<\/style>/gm,"");
+};
