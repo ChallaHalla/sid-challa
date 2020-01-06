@@ -40,13 +40,27 @@ var svgStyle = {
   startDelay: 6000,
   showCursor: false,
 };
+const escapedHTML = content.bio.map( (s) => { 
+  return content.toEscapedHtml(s);
+});
+console.log(escapedHTML);
+
+console.log(content.generateEscapedHTMLArray(escapedHTML));
 
 var bio ={
-  strings: content.bio,
-  typeSpeed: 40,
-  startDelay: 6000,
+  strings: content.generateEscapedHTMLArray(escapedHTML),
+  typeSpeed: 20,
+ // startDelay: 6000,
   showCursor: false,
   loop: false,
+  onStringTyped:(arrayPos, self) => {
+  console.log(self.options.strings[arrayPos]);
+    const htmlDiv = document.getElementById("html-bio");
+
+    htmlDiv.innerHTML += content.stringToHTML(self.options.strings[arrayPos]);
+    self.el.innerHTML = "";
+  },
+
  // contentType:"text",
  // onStringTyped: (arrayPos, self) => {
  //   console.log(arrayPos,self)
@@ -56,7 +70,7 @@ var bio ={
 
 
 
-var typeIntro = new Typed('#intro', intro);
-var typeCss = new Typed('#style-sheet', css);
-var typeSvgStyle = new Typed('#styled-css', svgStyle);
+//var typeIntro = new Typed('#intro', intro);
+//var typeCss = new Typed('#style-sheet', css);
+//var typeSvgStyle = new Typed('#styled-css', svgStyle);
 var typeBio = new Typed('#bio', bio);

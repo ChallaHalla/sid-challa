@@ -61,22 +61,69 @@ export const Css = [`
 }
 
 /*
- * Pay attention to the name animation :3
+ * Pay attention to the name animation :3 ^6000
  *
- * need to put a sleep here somehow to ensure that ppl can actually
- * see the animation lol
- *
- * That animation css is kinda messy but w.e fuq it lol
+ * That animation css is kinda messy but w.e
  *
  * Time to make this site look cool
  */
   `];
 
-export const bio = [ `<h3> Credentials:</h3>`, `<h3> Credentials:</h3><span>Full Stack Engineer @ <a href="httspans://dovetale.com">Dovetale</a></span>
+export const bio = [ `<h3> Credentials:</h3>
+<span>Full Stack Engineer @ <a href="https://dovetale.com">Dovetale</a></span>
 <span>Software Engineering Intern @ AWS <span>
 <span>Math/CS from NYU, class of 2019 </span>
 <span>Former Super Smash Brothers Melee TO/Player </span>
 <small>Falco/Fox main (catch these hands)</small><h3> Catch me on: </h3><span>github.com/ChallaHalla</span>
 <span>twitter.com/darthchalla</span><h3>See my work:</h3><span>Random Acts of Pizza</span>
-<span>Geras</span><h3>About me:</h3><span>hmmm what I need to say lol</span>
-`];
+<span>Geras</span><h3>About me:</h3><span>hmmm what I need to say lol</span>`];
+
+export const toEscapedHtml = (str) => {
+ return str.replace(/</g,"&lt;").
+ replace(/>/g,"&gt;")
+}
+
+
+export const generateEscapedHTMLArray = (strings) => {
+
+return strings[0].split("\n");
+
+//   const escapedHTMLString = strings[0];
+//   const stringsToHTML = [];
+//   [...escapedHTMLString ].forEach((c,i) => {
+//    if(c === "\n"){
+//      if(stringsToHTML.length > 0){
+//        // generate html to escape
+//          const prevString = stringsToHTML[stringsToHTML.length -1]
+//          //let newString = stringToHTML(prevString);
+//
+//          let newString = "";
+//          newString += escapedHTMLString.substring(toEscapedHtml(prevString).length-1, i);
+//          console.log(newString);
+//          stringsToHTML.push(newString);
+//      }else{
+//        stringsToHTML.push( escapedHTMLString.substring(0,i));
+//      }
+
+
+
+      //append current substring to array
+      //
+      //
+      //flow
+      //
+      //insert escaped html,
+      //change current element html to unescaped html
+      //
+      //next string
+  //  }
+
+
+  // });
+  // return stringsToHTML;
+}
+
+export const stringToHTML = (str) => {
+ return str.replace(/&lt;/g,"<").
+ replace(/&gt;/g,">")
+}
