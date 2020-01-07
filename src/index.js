@@ -54,8 +54,8 @@ const bio ={
 
 const typeStyle = () => {
   console.log("Typing style");
- // const typeCss = new Typed('#style-sheet', css);
- // const typeSvgStyle = new Typed('#styled-css', svgStyle);
+  const typeCss = new Typed('#style-sheet', css);
+  const typeSvgStyle = new Typed('#styled-css', svgStyle);
   const typeSVG = new Typed('#svg', svg);
   const typeBio = new Typed('#bio', bio);
 };
