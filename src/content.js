@@ -61,6 +61,8 @@ export const Css = [`
   animation: dash 7s linear forwards;
 }
 
+
+
 /*
  * Pay attention to the name animation :3 ^6000
  *
@@ -70,14 +72,25 @@ export const Css = [`
  */
   `];
 
-export const bio = [ `<h3> Credentials:</h3>
+export const bio = [ `
+<div class="section__container">
+<h3> Credentials:</h3>
 <span>Full Stack Engineer @ <a href="https://dovetale.com">Dovetale</a></span>
 <span>Software Engineering Intern @ AWS <span>
 <span>Math/CS from NYU, class of 2019 </span>
 <span>Former Super Smash Brothers Melee TO/Player </span>
-<small>Falco/Fox main (catch these hands)</small><h3> Catch me on: </h3><span>github.com/ChallaHalla</span>
+<small>Falco/Fox main (catch these hands)</small>
+</div>
+
+<div class="section__container">
+<h3> Catch me on: </h3><span>github.com/ChallaHalla</span>
 <span>twitter.com/darthchalla</span><h3>See my work:</h3><span>Random Acts of Pizza</span>
-<span>Geras</span><h3>About me:</h3><span>hmmm what I need to say lol</span>`];
+<span>Geras</span>
+</div>
+
+<div class="section__container">
+<h3>About me:</h3><span>hmmm what I need to say lol</span>
+</div>`];
 
 export const cssToHTML = (str) => {
   return str.replace(/(#)(.*)(\d|){/gm, "<span class='id_selector'>$1$2</span> {").
