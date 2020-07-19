@@ -1,10 +1,86 @@
 <html>
 <head id="head">
   <link rel="stylesheet" type="text/css" href="src/css/main.css">
+  <style>
+.id_selector{
+  color: #29A006;
+}
+.class_selector{
+  color: #06A07D;
+}
+.property {
+  color: #2C81CD;
+}
+#styled-css{
+  position: absolute;
+  right: 0;
+  font-family: courier;
+  opacity: .3;
+  color: white;
+  background: #0E3702;
+  width: 600px;
+  height: 600px;
+  overflow: scroll;
+}
+@keyframes dash {
+  0%{
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    fill:white;
+  }
+  40%{
+    stroke-dasharray: 80;
+    stroke-dashoffset: 200;
+    stroke-width: 1;
+    fill:white;
+  }
+  65%{
+    stroke-dasharray: .001;
+    stroke-dashoffset: 0;
+    stroke-width: 2;
+  }
+  100%{
+    fill: black;
+  }
+}
+.title__name {
+  stroke: black;
+  font-family: 'times-new-roman', sans-serif;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 800;
+  stroke-width: 0;
+  animation: dash 7s linear forwards;
+}
+
+.section__container{
+  height: 500px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #434242;
+  padding: 40px 180px;
+}
+.section__container hr {
+  width: 50%;
+  border-color: #727878;
+  border-top: 5px;
+  opacity: .2;
+}
+#credentials{
+  background: #fce8d5;
+}
+
+#credentials h1 {
+   color: #0a97b0;
+   font-weight: 300;
+   text-align: center;
+   font-size: 50px;
+}
+
+  </style>
 </head>
 <body className="body">
 
   <style id="style-sheet" ></style>
+
   <div id="intro" style="white-space:pre; display: block;"></div>
 
   <div id="svg" style="white-space:pre; display: block;"></div>
@@ -15,6 +91,31 @@
 
   <div id="styled-css" style="white-space:pre; display: inline-block;" ></div>
 
-<script src="./dist/main.js" ></script>
+<!-- <script src="./dist/main.js" ></script> -->
+
+<div class="section__container" id="credentials">
+<h1> Experiences</h1>
+<hr ></hr>
+<div>Full Stack Engineer @ <a href="https://dovetale.com">Dovetale</a></div>
+<div>Software Engineering Intern @ AWS <div>
+<div>Math/CS from NYU, class of 2019 </div>
+<div>Former Super Smash Brothers Melee TO/Player </div>
+<div>Falco/Fox main (catch these hands)</div>
+</div>
+</div>
+</div>
+
+<div class="section__container">
+<h3> Catch me on: </h3><div>github.com/ChallaHalla</div>
+<span>twitter.com/darthchalla</span>
+</div>
+<div class="section__container">
+<h3>See my work:</h3><div>Random Acts of Pizza</div>
+<div>Geras</div>
+</div>
+
+<div class="section__container">
+<h3>About me:</h3><div>hmmm what I need to say lol</div>
+</div>
 </body>
 </html>
