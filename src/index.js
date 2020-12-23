@@ -24,12 +24,14 @@ const intro = {
 const svg = {
   strings: content.svgHTML,
   typeSpeed: 20,
+  startDelay: 10000,
   showCursor: false,
   contentType:"text",
   onComplete:(self)=>{
     self.el.innerHTML = self.el.innerText;
   }
 }
+
 const css = {
   strings: content.Css,
   typeSpeed: 15,
