@@ -7,6 +7,7 @@
     "typed.js": "^2.0.11"
   },
   "devDependencies": {
+    "html-webpack-plugin": "^4.5.2",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
@@ -26,8 +27,8 @@
   },
   "homepage": "https://github.com/ChallaHalla/sid-challa#readme",
   "browser": {
-  "fs": false,
-  "path": false,
-  "os": false
-}
+    "fs": false,
+    "path": false,
+    "os": false
+  }
 }
