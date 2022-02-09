@@ -82,5 +82,4 @@ Promise.all([htmlPromise, cssPromise]).then((values) => {
   content.css = [css]
   content.cssHTML = cssToHTML(css)
   type(content)
-
 })
