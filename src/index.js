@@ -3,10 +3,6 @@ import cssToHTML from "./cssToHTML";
 const preview = require("html-loader!./preview.html");
 const typedCss = require("html-loader!./css/typed.css");
 
-fetch(".css/typed.css").then((r) => console.log(r))
-//import ".css/typed.css"
-//
-
 const updateScroll = () => {
   const styleCss = document.getElementById("styled-css");
   styleCss.scrollTop = styleCss.scrollHeight;
@@ -16,7 +12,6 @@ setInterval(updateScroll,10);
 
 
 function type(content){
-  console.log("ENTERED", content)
   const intro = {
     strings: [
       "Welcome to my personal site!",
@@ -81,7 +76,11 @@ doc.innerHTML = html
 content.svgHTML = [doc.querySelector("#svg").innerHTML]
 content.bio = [doc.querySelector("#bio").innerHTML]
 
-const css = typedCss.default
+let css = typedCss.default
+css = css.replaceAll("{ ", "{ \n")
+css = css.replaceAll("}", "} \n")
+css = css.replaceAll(/;/g, "; \n")
+
 content.css = [css]
 content.cssHTML = cssToHTML(css)
 type(content)
