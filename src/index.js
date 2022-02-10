@@ -19,7 +19,7 @@ function type(content){
       "This looks a little bare...",
       "Let's fix that"
    ],
-    typeSpeed: 20,
+    typeSpeed: 18,
     showCursor: false,
     onComplete:(self)=>{
       typeStyle();
@@ -29,8 +29,8 @@ function type(content){
   
   const svg = {
     strings: content.svgHTML,
-    typeSpeed: 20,
-    startDelay: 10000,
+    typeSpeed: 15,
+    startDelay: 200,
     showCursor: false,
     contentType:"text",
     onComplete:(self)=>{
@@ -38,15 +38,15 @@ function type(content){
     }
   }
   
-  const cssText = {
+  const styleSheet = {
     strings: content.css,
-    typeSpeed: 15,
+    typeSpeed: 14,
     showCursor: false,
   };
   
   const cssHTML = {
     strings: [ content.cssHTML ],
-    typeSpeed: 12,
+    typeSpeed: 9,
     showCursor: false,
   };
   
@@ -59,14 +59,13 @@ function type(content){
   }
   
   const typeStyle = () => {
-    const typeCss = new Typed('#style-sheet', cssText);
-    const typeSvgStyle = new Typed('#styled-css', cssHTML);
-    const typeSVG = new Typed('#svg', svg);
-    const typeBio = new Typed('#bio', bio);
+    new Typed('#style-sheet', styleSheet);
+    new Typed('#styled-css', cssHTML);
+    new Typed('#svg', svg);
+    new Typed('#bio', bio);
   };
   
-  
-  const typeIntro = new Typed('#intro', intro);
+  new Typed('#intro', intro);
 }
 
 const content = {}
