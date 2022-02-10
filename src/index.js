@@ -1,5 +1,10 @@
 import Typed from "typed.js"
 import cssToHTML from "./cssToHTML";
+const preview = require("html-loader!./preview.html");
+const typedCss = require("html-loader!./css/typed.css");
+//import ".css/typed.css"
+//
+
 const updateScroll = () => {
   const styleCss = document.getElementById("styled-css");
   styleCss.scrollTop = styleCss.scrollHeight;
@@ -9,6 +14,7 @@ setInterval(updateScroll,10);
 
 
 function type(content){
+  console.log("ENTERED", content)
   const intro = {
     strings: [
       "Welcome to my personal site!",
@@ -19,6 +25,7 @@ function type(content){
     typeSpeed: 20,
     showCursor: false,
     onComplete:(self)=>{
+      console.log("completed!")
       typeStyle();
       self.destroy();
     },
@@ -56,6 +63,7 @@ function type(content){
   }
   
   const typeStyle = () => {
+    console.log("typing")
     const typeCss = new Typed('#style-sheet', cssText);
     const typeSvgStyle = new Typed('#styled-css', cssHTML);
     const typeSVG = new Typed('#svg', svg);
@@ -67,19 +75,16 @@ function type(content){
 }
 
 
-const htmlPromise = fetch('preview.html').then(response => response.text() )
-const cssPromise = fetch('src/css/typed.css').then(response => response.text() )
+console.log("BEFORE TYPE")
 
-Promise.all([htmlPromise, cssPromise]).then((values) => {
-  const content = {}
-  const html = values[0];
-  const doc = document.createElement('html');
-  doc.innerHTML = html
-  content.svgHTML = [doc.querySelector("#svg").innerHTML]
-  content.bio = [doc.querySelector("#bio").innerHTML]
+const content = {}
+const html = preview.default
+const doc = document.createElement('html');
+doc.innerHTML = html
+content.svgHTML = [doc.querySelector("#svg").innerHTML]
+content.bio = [doc.querySelector("#bio").innerHTML]
 
-  const css = values[1];
-  content.css = [css]
-  content.cssHTML = cssToHTML(css)
-  type(content)
-})
+const css = typedCss.default
+content.css = [css]
+content.cssHTML = cssToHTML(css)
+type(content)

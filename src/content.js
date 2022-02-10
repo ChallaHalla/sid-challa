@@ -1,11 +1,3 @@
-fetch('preview.html')
-  .then(response => {
-    return response.text()
-  })
-  .then(text => {
-    console.log(text)
-});
-
 export const IntroText = [
 "Welcome to my personal site!",
   "hmmm...",
