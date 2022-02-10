@@ -1,3 +1,7 @@
   #typed-container::before{
     content:<b>Test</b>;
   }
+
+p {
+  margin: 0;
+}

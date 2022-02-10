@@ -25,7 +25,6 @@ function type(content){
     typeSpeed: 20,
     showCursor: false,
     onComplete:(self)=>{
-      console.log("completed!")
       typeStyle();
       self.destroy();
     },
@@ -63,7 +62,6 @@ function type(content){
   }
   
   const typeStyle = () => {
-    console.log("typing")
     const typeCss = new Typed('#style-sheet', cssText);
     const typeSvgStyle = new Typed('#styled-css', cssHTML);
     const typeSVG = new Typed('#svg', svg);
@@ -73,9 +71,6 @@ function type(content){
   
   const typeIntro = new Typed('#intro', intro);
 }
-
-
-console.log("BEFORE TYPE")
 
 const content = {}
 const html = preview.default
