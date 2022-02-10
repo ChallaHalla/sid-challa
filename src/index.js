@@ -2,6 +2,8 @@ import Typed from "typed.js"
 import cssToHTML from "./cssToHTML";
 const preview = require("html-loader!./preview.html");
 const typedCss = require("html-loader!./css/typed.css");
+
+fetch(".css/typed.css").then((r) => console.log(r))
 //import ".css/typed.css"
 //
 
