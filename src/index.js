@@ -8,8 +8,7 @@ const updateScroll = () => {
   styleCss.scrollTop = styleCss.scrollHeight;
 }
 
-setInterval(updateScroll,10);
-
+const intervalId = setInterval(updateScroll,10);
 
 function type(content){
   const intro = {
@@ -42,6 +41,9 @@ function type(content){
     strings: content.css,
     typeSpeed: 14,
     showCursor: false,
+    onComplete: () => {
+      clearInterval(intervalId);
+    }
   };
   
   const cssHTML = {

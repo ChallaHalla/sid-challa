@@ -8,6 +8,11 @@
   color: #2C81CD;
   margin-left: 50px;
 }
+#flex-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 #styled-css{
   display:inline-block;
   float:right;
@@ -16,7 +21,7 @@
   background: #0E3702;
   width: 600px;
   height: 600px;
-  overflow: scroll;
+  overflow: hidden;
 }
 @keyframes dash {
   0%{
@@ -47,11 +52,11 @@
   stroke-width: 0;
   animation: dash 7s linear forwards;
 }
+/* Sorry for locking the scroll for this container*/
+/* I used some JS to make the style container auto scroll to bottom to always show the most recent styles*/
+/* But that makes scrolling with the mouse weird so I just disabled it till the styled were all typed out*/
 
-
-
-/*
- * Pay attention to the name animation :3 
- *
- * That animation css is kinda messy but w.e
- */
+#styled-css{
+  overflow: scroll;
+}
+/* You can now scroll through the styles if you'd like :D */

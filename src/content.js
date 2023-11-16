@@ -10,68 +10,6 @@ export const svgHTML = [`<svg height="150" width="1200">
   </svg>`
 ];
 
-
-export const Css = [`
-.id_selector{
-  color: #29A006;
-}
-.class_selector{
-  color: #06A07D;
-}
-.property {
-  color: #2C81CD;
-}
-#styled-css{
-  display:inline-block;
-  float:right;
-  font-family: courier;
-  color: white;
-  background: #0E3702;
-  width: 600px;
-  height: 600px;
-  overflow: scroll;
-}
-@keyframes dash {
-  0%{
-    stroke-dasharray: 200;
-    stroke-dashoffset: 200;
-    fill:white;
-  }
-  40%{
-    stroke-dasharray: 80;
-    stroke-dashoffset: 200;
-    stroke-width: 1;
-    fill:white;
-  }
-  65%{
-    stroke-dasharray: .001;
-    stroke-dashoffset: 0;
-    stroke-width: 2;
-  }
-  100%{
-    fill: black;
-  }
-}
-.title__name {
-  stroke: black;
-  font-family: 'times-new-roman', sans-serif;
-  stroke-dasharray: 200;
-  stroke-dashoffset: 800;
-  stroke-width: 0;
-  animation: dash 7s linear forwards;
-}
-
-
-
-/*
- * Pay attention to the name animation :3 ^6000
- *
- * That animation css is kinda messy but w.e
- *
- * Time to make this site look cool
- */
-  `];
-
 export const bio = [ `
 <div class="section__container">
 <h3> Credentials:</h3>
