@@ -54,7 +54,7 @@
 }
 /* Sorry for locking the scroll for this container*/
 /* I used some JS to make the style container auto scroll to bottom to always show the most recent styles*/
-/* But that makes scrolling with the mouse weird so I just disabled it till the styled were all typed out*/
+/* But that makes scrolling with the mouse weird so I just disabled it till the styles were all typed out*/
 
 #styled-css{
   overflow: scroll;
