@@ -11,7 +11,81 @@
 
 <body className="body">
 
-  <style id="style-sheet"></style>
+  <style id="style-sheet">
+    .id_selector {
+      color: #29A006;
+    }
+
+    .class_selector {
+      color: #06A07D;
+    }
+
+    .property {
+      color: #2C81CD;
+      margin-left: 50px;
+    }
+
+    #flex-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    #styled-css {
+      display: inline-block;
+      float: right;
+      font-family: courier;
+      color: white;
+      background: #0E3702;
+      width: 600px;
+      height: 600px;
+      overflow: hidden;
+    }
+
+    @keyframes dash {
+      0% {
+        stroke-dasharray: 200;
+        stroke-dashoffset: 200;
+        fill: white;
+      }
+
+      40% {
+        stroke-dasharray: 80;
+        stroke-dashoffset: 200;
+        stroke-width: 1;
+        fill: white;
+      }
+
+      65% {
+        stroke-dasharray: .001;
+        stroke-dashoffset: 0;
+        stroke-width: 2;
+      }
+
+      100% {
+        fill: black;
+      }
+    }
+
+    .title__name {
+      stroke: black;
+      font-family: 'times-new-roman', sans-serif;
+      stroke-dasharray: 200;
+      stroke-dashoffset: 800;
+      stroke-width: 0;
+      animation: dash 7s linear forwards;
+    }
+
+    /* Sorry for locking the scroll for this container*/
+    /* I used some JS to make the style container auto scroll to bottom to always show the most recent styles*/
+    /* But that makes scrolling with the mouse weird so I just disabled it till the styles were all typed out*/
+
+    #styled-css {
+      overflow: scroll;
+    }
+
+    /* You can now scroll through the styles if you'd like :D */
+  </style>
   <div id="intro" style="white-space:pre; display: block;"></div>
 
   <div id="svg" style="white-space:pre; display: block;">
@@ -42,7 +116,7 @@
         <h3>Some of my stuff:</h3>
         <p> <a href="https://coffeelistnyc.com">Coffee List NYC</a></p>
         <p> <a href="https://github.com/ChallaHalla/dotfiles">dotfiles</a></p>
-        <p> <a href="https://github.com/ChallaHalla/free-pizza">Random Acts of Pizza</a></p>
+        <p> <a href="https://github.com/Shopify/ruby-lsp-rails/pull/526">Contribution to Ruby LSP </a> </p>
       </div>
 
       <div class="section__container">
@@ -52,7 +126,43 @@
       </div>
     </div>
 
-    <div id="styled-css" style="white-space:pre; display: inline-block;"></div>
+    <div id="styled-css" style="display: inline-block;"><span class="class_selector">.id_selector</span> { <br><span
+        class="property"> color</span>:<span class="value"> #29A006</span>; <br> } <br> <span
+        class="class_selector">.class_selector</span> { <br><span class="property"> color</span>:<span class="value">
+        #06A07D</span>; <br> } <br> <span class="class_selector">.property </span> { <br><span class="property">
+        color</span>:<span class="value"> #2C81CD</span>; <br><span class="property"> margin-left</span>:<span
+        class="value"> 50px</span>; <br> } <br> <span class="id_selector">#flex-wrapper</span> { <br><span
+        class="property"> display</span>:<span class="value"> flex</span>; <br><span class="property">
+        flex-wrap</span>:<span class="value"> wrap</span>; <br><span class="property"> justify-content</span>:<span
+        class="value"> space-between</span>; <br> } <br> <span class="id_selector">#styled-css</span> { <br><span
+        class="property"> display</span>:<span class="value">inline-block</span>; <br><span class="property">
+        float</span>:<span class="value">right</span>; <br><span class="property"> font-family</span>:<span
+        class="value"> courier</span>; <br><span class="property"> color</span>:<span class="value"> white</span>;
+      <br><span class="property"> background</span>:<span class="value"> #0E3702</span>; <br><span class="property">
+        width</span>:<span class="value"> 600px</span>; <br><span class="property"> height</span>:<span class="value">
+        600px</span>; <br><span class="property"> overflow</span>:<span class="value"> hidden</span>; <br> } <br>
+      @keyframes dash { <br>0%{ <br><span class="property"> stroke-dasharray</span>:<span class="value"> 200</span>;
+      <br><span class="property"> stroke-dashoffset</span>:<span class="value"> 200</span>; <br><span class="property">
+        fill</span>:<span class="value">white</span>; <br> } <br> 40%{ <br><span class="property">
+        stroke-dasharray</span>:<span class="value"> 80</span>; <br><span class="property">
+        stroke-dashoffset</span>:<span class="value"> 200</span>; <br><span class="property">
+        stroke-width</span>:<span class="value"> 1</span>; <br><span class="property"> fill</span>:<span
+        class="value">white</span>; <br> } <br> 65%{ <br><span class="property"> stroke-dasharray</span>:<span
+        class="value"> .001</span>; <br><span class="property"> stroke-dashoffset</span>:<span class="value">
+        0</span>; <br><span class="property"> stroke-width</span>:<span class="value"> 2</span>; <br> } <br> 100%{
+      <br><span class="property"> fill</span>:<span class="value"> black</span>; <br> } <br> } <br> <span
+        class="class_selector">.title__name </span> { <br><span class="property"> stroke</span>:<span class="value">
+        black</span>; <br><span class="property"> font-family</span>:<span class="value"> 'times-new-roman',
+        sans-serif</span>; <br><span class="property"> stroke-dasharray</span>:<span class="value"> 200</span>;
+      <br><span class="property"> stroke-dashoffset</span>:<span class="value"> 800</span>; <br><span class="property">
+        stroke-width</span>:<span class="value"> 0</span>; <br><span class="property">
+        animation</span>:<span class="value"> dash 7s linear forwards</span>; <br> } <br> /* Sorry for locking the
+      scroll for this container<br> /* I used some JS to make the style container auto scroll to bottom to always show
+      the most recent styles<br> /* But that makes scrolling with the mouse weird so I just disabled it till the
+      styles were all typed out<br> <span class="id_selector">#styled-css</span> { <br><span class="property">
+        overflow</span>:<span class="value"> scroll</span>; <br> } <br> /* You can now scroll through the styles if
+      you'd like :D <br>
+    </div>
   </div>
 </body>
 

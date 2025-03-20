@@ -14,7 +14,7 @@
     "webpack-dev-server": "^3.10.1"
   },
   "scripts": {
-    "start": "http-server -p 8080 ./dist -o http://localhost:8080/index.html",
+    "start": "http-server -p 8080 ./dist -o",
     "build": "webpack"
   },
   "repository": {

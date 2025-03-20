@@ -59,6 +59,13 @@ function type(content){
     showCursor: false,
     loop: false,
   }
+
+  const skip ={
+    strings: ["<a href='/finished.html'><i>(Click here to skip the site building itself.)</i></a>"],
+    typeSpeed: 15,
+    showCursor: false,
+    loop: false,
+  }
   
   const typeStyle = () => {
     new Typed('#style-sheet', styleSheet);
@@ -68,6 +75,7 @@ function type(content){
   };
   
   new Typed('#intro', intro);
+  new Typed('#skip', skip);
 }
 
 const content = {}
