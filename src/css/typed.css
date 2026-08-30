@@ -1,64 +1,238 @@
-.id_selector{
-  color: #29A006;
+:root {
+  color-scheme: light;
 }
-.class_selector{
-  color: #06A07D;
+
+* {
+  box-sizing: border-box;
 }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #18201b;
+  background: #f3f5f2;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+#flex-wrapper {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.82fr) minmax(440px, 1.18fr);
+  gap: 52px;
+  width: min(1120px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 4px 0 64px;
+  align-items: start;
+}
+
+#styled-css {
+  position: sticky;
+  top: 24px;
+  width: 100%;
+  height: min(72vh, 680px);
+  min-height: 520px;
+  padding: 24px 26px;
+  overflow: auto;
+  color: #e7eee9;
+  background: #10291d;
+  border: 1px solid #284c38;
+  border-radius: 6px;
+  box-shadow: 0 18px 45px rgba(20, 35, 26, 0.13);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.55;
+  scrollbar-color: #52705e #10291d;
+}
+
+.id_selector {
+  color: #9edc72;
+}
+
+.class_selector {
+  color: #63d7bd;
+}
+
 .property {
-  color: #2C81CD;
-  margin-left: 50px;
+  color: #89bfff;
+  margin-left: 24px;
 }
-.external-link {
-  font-size: 0.8em;
-  text-decoration: none;
-  vertical-align: 0.05em;
+
+.value {
+  color: #f1d878;
 }
-#flex-wrapper{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+
+#svg {
+  width: min(1120px, calc(100% - 64px));
+  margin: 0 auto;
+  padding-top: 42px;
 }
-#styled-css{
-  display:inline-block;
-  float:right;
-  font-family: courier;
-  color: white;
-  background: #0E3702;
-  width: 600px;
-  height: 600px;
-  overflow: hidden;
+
+#svg svg {
+  display: block;
+  width: 100%;
+  height: 132px;
+  overflow: visible;
 }
+
+#bio {
+  min-width: 0;
+  padding-top: 8px;
+}
+
+.section__container {
+  padding: 0 0 28px;
+}
+
+.section__container + .section__container {
+  padding-top: 28px;
+  border-top: 1px solid #cbd2cc;
+}
+
+h3 {
+  margin: 0 0 12px;
+  color: #536057;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+p + h3 {
+  margin-top: 24px;
+}
+
+p {
+  margin: 0;
+}
+
+p + p {
+  margin-top: 5px;
+}
+
+small {
+  display: block;
+  margin-top: 2px;
+  color: #6a756d;
+  font-size: 0.78rem;
+}
+
+a {
+  color: #12663f;
+  text-decoration-color: #9ebbaa;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: #0a4228;
+  text-decoration-color: currentColor;
+}
+
+a:focus-visible {
+  outline: 2px solid #1d7a4d;
+  outline-offset: 3px;
+}
+
 @keyframes dash {
-  0%{
+  0% {
     stroke-dasharray: 200;
     stroke-dashoffset: 200;
-    fill:white;
+    fill: #f3f5f2;
   }
-  40%{
+
+  40% {
     stroke-dasharray: 80;
     stroke-dashoffset: 200;
     stroke-width: 1;
-    fill:white;
+    fill: #f3f5f2;
   }
-  65%{
+
+  65% {
     stroke-dasharray: .001;
     stroke-dashoffset: 0;
     stroke-width: 2;
   }
-  100%{
-    fill: black;
+
+  100% {
+    fill: #18201b;
   }
 }
+
 .title__name {
-  stroke: black;
-  font-family: 'times-new-roman', sans-serif;
+  stroke: #18201b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
   stroke-dasharray: 200;
   stroke-dashoffset: 800;
   stroke-width: 0;
-  animation: dash 7s linear forwards;
+  animation: dash 4.5s ease forwards;
 }
-#styled-css{
-  overflow: scroll;
-}
+
 /* You can now scroll through the styles if you'd like :D */
 
+#skip {
+  left: 16px;
+  z-index: 10;
+  color: #536057;
+  font-size: 0.78rem;
+}
+
+#skip a {
+  color: inherit;
+}
+
+@media (max-width: 860px) {
+  #svg,
+  #flex-wrapper {
+    width: min(680px, calc(100% - 40px));
+  }
+
+  #svg {
+    padding-top: 28px;
+  }
+
+  #flex-wrapper {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding-bottom: 40px;
+  }
+
+  #styled-css {
+    position: static;
+    height: 480px;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  #svg,
+  #flex-wrapper {
+    width: calc(100% - 32px);
+  }
+
+  #svg {
+    padding-top: 12px;
+  }
+
+  .title__name {
+    font-size: 40px;
+  }
+
+  #styled-css {
+    height: 420px;
+    padding: 18px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title__name {
+    fill: #18201b;
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+}

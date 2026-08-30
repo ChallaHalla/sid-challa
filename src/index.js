@@ -34,7 +34,7 @@ const svg = {
 
 const styleSheet = {
   strings: [css],
-  typeSpeed: 14,
+  typeSpeed: 2,
   showCursor: false,
   onComplete: () => {
     clearInterval(intervalId);
@@ -43,7 +43,7 @@ const styleSheet = {
 
 const cssHTML = {
   strings: [ cssToHTML(css) ],
-  typeSpeed: 9,
+  typeSpeed: 1,
   showCursor: false,
 };
 
