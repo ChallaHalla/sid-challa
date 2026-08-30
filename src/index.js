@@ -3,12 +3,22 @@ import cssToHTML from "./cssToHTML";
 const preview = require("html-loader!./preview.html");
 const typedCss = require("html-loader!./css/typed.css");
 
-const updateScroll = () => {
-  const styleCss = document.getElementById("styled-css");
-  styleCss.scrollTop = styleCss.scrollHeight;
-}
+const styleSheetElement = document.getElementById("style-sheet");
+const styledCssElement = document.getElementById("styled-css");
+let renderPending = false;
 
-const intervalId = setInterval(updateScroll,10);
+const renderTypedCss = () => {
+  if (renderPending) return;
+
+  renderPending = true;
+  requestAnimationFrame(() => {
+    styledCssElement.innerHTML = cssToHTML(styleSheetElement.textContent);
+    styledCssElement.scrollTop = styledCssElement.scrollHeight;
+    renderPending = false;
+  });
+};
+
+const cssObserver = new MutationObserver(renderTypedCss);
 
 const html = preview.default
 const doc = document.createElement('html');
@@ -36,15 +46,7 @@ const styleSheet = {
   strings: [css],
   typeSpeed: 2,
   showCursor: false,
-  onComplete: () => {
-    clearInterval(intervalId);
-  }
-};
-
-const cssHTML = {
-  strings: [ cssToHTML(css) ],
-  typeSpeed: 1,
-  showCursor: false,
+  onComplete: renderTypedCss,
 };
 
 
@@ -63,8 +65,12 @@ const skip ={
 }
 
 const typeStyle = () => {
+  cssObserver.observe(styleSheetElement, {
+    childList: true,
+    characterData: true,
+    subtree: true,
+  });
   new Typed('#style-sheet', styleSheet);
-  new Typed('#styled-css', cssHTML);
   new Typed('#svg', svg);
   new Typed('#bio', bio);
 };
