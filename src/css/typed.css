@@ -8,6 +8,11 @@
   color: #2C81CD;
   margin-left: 50px;
 }
+.external-link {
+  font-size: 0.8em;
+  text-decoration: none;
+  vertical-align: 0.05em;
+}
 #flex-wrapper{
   display: flex;
   flex-wrap: wrap;
@@ -52,11 +57,8 @@
   stroke-width: 0;
   animation: dash 7s linear forwards;
 }
-/* Sorry for locking the scroll for this container*/
-/* I used some JS to make the style container auto scroll to bottom to always show the most recent styles*/
-/* But that makes scrolling with the mouse weird so I just disabled it till the styles were all typed out*/
-
 #styled-css{
   overflow: scroll;
 }
 /* You can now scroll through the styles if you'd like :D */
+
